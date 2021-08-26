@@ -3,12 +3,8 @@
 from flask import Flask
 from flask.globals import request
 
-from pyfade import Colors, Fade
-from pycenter import center
-
 
 from os import name, system
-from base64 import b64decode
 
 from src.database import Database
 
@@ -33,37 +29,10 @@ app = Flask("Raven")
 
 
 
-# VARIABLES
-
-raven = """
-   █████████    ▄████████    ▄█    █▄     ▄████████   ██████▄   
-  ███    ███   ███    ███   ███    ███   ███    ███   ███▀▀▀██▄ 
-  ███    ███   ███    ███   ███    ███   ███    ███   ███   ███ 
-  ███▄▄▄▄███   ███    ███   ███    ███   ███▄▄▄       ███   ███ 
-  ███▀▀▀▀▀     ██████████   ███    ███   ███▀▀▀       ███   ███ 
-  ██████████   ███    ███   ███    ███   ███    █▄    ███   ███ 
-  ███    ███   ███    ███   ███    ███   ███    ███   ███   ███ 
-  ███    ███   ███    █▀     ▀██████▀    ██████████   ███   ███ 
-  ███    ███                                          ███   ███   
-"""
-
-author = "   - - - {} - - -".format(b64decode("YmlsbHl0aGVnb2F0MzU2").decode('utf-8'))
-
-
 # MAIN FUNCTION
 
 def main():
     clear()
-
-    if name == 'nt':
-        system("title Raven")
-        system("mode 140, 40")
-
-    print(Fade.Vertical(Colors.purple_to_red, center(raven)))
-    print(Fade.Horizontal(Colors.red_to_black, center(author)))
-
-    print("\n"*2)
-
     app.run(port=port)
 
 
