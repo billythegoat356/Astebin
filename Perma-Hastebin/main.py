@@ -1,6 +1,6 @@
 # REQUIREMENTS
 
-from flask import Flask
+from flask import Flask, redirect
 from flask.globals import request
 
 
@@ -41,7 +41,7 @@ def main():
 
 @app.route('/')
 def index():
-    return "Made with <3 by https://github.com/billythegoat356/Raven"
+    return redirect("https://github.com/billythegoat356/Raven")
 
 
 @app.route("/get/<int:id>", methods=['GET'])
