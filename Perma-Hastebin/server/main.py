@@ -23,7 +23,7 @@ Database.makedb()
 
 port = 8500
 
-app = Flask("Raven")
+app = Flask("Astebin")
 
 
 
@@ -40,7 +40,7 @@ def main():
 
 @app.route('/')
 def index():
-    return redirect("https://github.com/billythegoat356/Raven")
+    return redirect("https://github.com/billythegoat356/Astebin")
 
 
 @app.route("/get/<int:id>", methods=['GET'])
